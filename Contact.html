@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <input type="button" onclick="javascript: window.open('mailto:test@example.com?subject=subject&body=body');" />
+
+
+    <textarea id="myText">
+        Lorem ipsum...
+    </textarea>
+    <button onclick="sendMail(); return false">Send</button>
+    <script>
+        function sendMail() {
+            var link = "mailto:adi.arman321@gmail.com"
+                     + "?cc=a@example.com"
+                     + "&subject=" + escape("This is my subject")
+                     + "&body=" + escape(document.getElementById('myText').value)
+            ;
+
+            window.location.href = link;
+        }
+    </script>
+</body>
+</html>
